@@ -104,22 +104,22 @@
 
 ### 📌 Reachability
 
-- [ ] Definition of Reachability  
-- [ ] Reachable Node  
-- [ ] Reachable Set of a Node  
-- [ ] Geodesic (Shortest Path Concept)  
-- [ ] Distance Between Two Nodes  
-- [ ] Properties of Reachability  
-- [ ] Triangle Inequality  
-- [ ] Node Base  
-- [ ] Strongly Reachable  
-- [ ] Weakly Reachable  
-- [ ] Path Matrix (Reachability Matrix)  
-- [ ] Construction of Path Matrix  
-- [ ] Warshall’s Algorithm (Step-by-step)  
-- [ ] Warshall’s Algorithm Flowchart  
-- [ ] Applications in Deadlock Detection  
-- [ ] Resource Allocation Graph Concept  
+- [ ] Definition of Reachability
+- [ ] Reachable Node
+- [ ] Reachable Set of a Node
+- [ ] Geodesic (Shortest Path Concept)
+- [ ] Distance Between Two Nodes
+- [ ] Properties of Reachability
+- [ ] Triangle Inequality
+- [ ] Node Base
+- [ ] Strongly Reachable
+- [ ] Weakly Reachable
+- [ ] Path Matrix (Reachability Matrix)
+- [ ] Construction of Path Matrix
+- [ ] Warshall’s Algorithm (Step-by-step)
+- [ ] Warshall’s Algorithm Flowchart
+- [ ] Applications in Deadlock Detection
+- [ ] Resource Allocation Graph Concept
 
 ### 📌 Trees
 
