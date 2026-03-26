@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 class College {
 
-    String collegeName;
+    private String collegeName;
 
     College(String name) {
         collegeName = name;
@@ -44,7 +44,7 @@ public class Practical_3_3 {
 
     public static void main(String[] args) {
 
-        College c = new College("GTU Engineering College");
+        College c = new College("IIT Bomby");
 
         College.Admission a = c.new Admission();
 

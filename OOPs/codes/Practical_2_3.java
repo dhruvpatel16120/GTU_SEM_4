@@ -26,8 +26,8 @@ class Time {
         hours = t1.hours + t2.hours;
 
         if (minutes >= 60) {
-            hours = hours + minutes / 60;
-            minutes = minutes % 60;
+            hours = hours + (minutes / 60) ; // add to hours
+            minutes = minutes % 60; // remaing minutus
         }
     }
 

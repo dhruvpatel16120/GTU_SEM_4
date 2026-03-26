@@ -49,6 +49,7 @@ public class Practical_4_5 {
         System.out.print("Enter payment amount: ");
         int amount = sc.nextInt();
 
+        // object reference 
         Payment p;
 
         if (choice == 1) {

@@ -17,7 +17,6 @@ public class Practical_1_6 {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-
         System.out.print("Enter a five-digit number: ");
         int num = sc.nextInt();
 
@@ -26,13 +25,13 @@ public class Practical_1_6 {
 
         while (num > 0) {
 
-            int digit = num % 10;
-            digit = (digit + 1) % 10;   // handle case like 9+1=10 → 0
+            int digit = num % 10; // get last digit from right
+            digit = (digit + 1) % 10;   // add 1 in digit with all posible values
 
-            result = result + digit * place;
+            result = result + digit * place; // create result with +1 in input
 
-            place = place * 10;
-            num = num / 10;
+            place = place * 10; // update the position of value
+            num = num / 10; //remove last digit
         }
 
         System.out.println("New number after adding 1 to each digit: " + result);

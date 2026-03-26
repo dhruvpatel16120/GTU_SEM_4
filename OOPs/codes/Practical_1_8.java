@@ -20,7 +20,7 @@ public class Practical_1_8 {
             return;
         }
 
-        // Convert command line arguments to double
+        // Convert command line arguments to double using wrapper classes
         double num1 = Double.parseDouble(args[0]);
         double num2 = Double.parseDouble(args[1]);
 

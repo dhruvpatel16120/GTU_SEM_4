@@ -29,12 +29,11 @@ public class Practical_1_2 {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-
         double a, b, c, d, e, f;
         double D, Dx, Dy, x, y;
-
+        
         // Taking coefficients from user
+        Scanner sc = new Scanner(System.in);
         System.out.print("Enter coefficient a: ");
         a = sc.nextDouble();
 

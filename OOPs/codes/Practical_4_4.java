@@ -73,6 +73,7 @@ public class Practical_4_4 {
         if (v instanceof Car) {
             Car c = (Car) v;
             System.out.println("Upcasting and Downcasting Successful");
+            c.displayDetails();
         }
 
         ElectricCar ec = new ElectricCar("GJ02EV9999", "Tesla", 5, true, 75, 2);

@@ -18,6 +18,7 @@ class Rectangle {
 
     // No-argument constructor
     Rectangle() {
+        System.out.println(" created Rectangle with W: 1 and H: 1");
     }
 
     // Parameterized constructor

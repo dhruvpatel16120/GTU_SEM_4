@@ -53,7 +53,7 @@ public class Practical_2_7 {
                 break;
 
             case 2:
-                System.out.print("Enter flat discount: ");
+                System.out.print("Enter flat discount in ruppees: ");
                 int discount = sc.nextInt();
                 bill.generateBill(amount, discount);
                 break;

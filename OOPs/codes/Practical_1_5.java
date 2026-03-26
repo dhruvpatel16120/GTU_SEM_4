@@ -13,16 +13,14 @@ calculate and display the minimum number of currency notes of denominations
 import java.util.Scanner;
 
 public class Practical_1_5 {
-
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-
         System.out.print("Enter the amount: ");
         int amount = sc.nextInt();
 
         int notes100 = amount / 100;
-        amount = amount % 100;
+        amount = amount % 100; 
 
         int notes50 = amount / 50;
         amount = amount % 50;

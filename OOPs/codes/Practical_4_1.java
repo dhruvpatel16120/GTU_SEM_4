@@ -18,7 +18,7 @@ class Shape {
 class Triangle extends Shape {
 
     double area() {
-        return 0.5 * d1 * d2;
+        return 0.5 * d1 * d2; // 1/2*a*b
     }
 }
 
@@ -38,7 +38,7 @@ public class Practical_4_1 {
         System.out.println("Triangle Area: " + t.area());
 
         Rectangle r = new Rectangle();
-        r.getData(8, 4);
+        r.getData(8.0, 4.0);
         System.out.println("Rectangle Area: " + r.area());
     }
 }

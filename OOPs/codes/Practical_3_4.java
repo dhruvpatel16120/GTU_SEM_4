@@ -1,18 +1,14 @@
 package OOPs.codes;
-
-/*
-Practical No: 3.4
-Title: Password Validation
-*/
-
 import java.util.Scanner;
 
 public class Practical_3_4 {
 
-    public static boolean isValidPassword(String password) {
+    // Method to check password
+    static boolean isValidPassword(String password) {
 
-        if (password.length() < 8)
+        if (password.length() < 8) {
             return false;
+        }
 
         int digitCount = 0;
 
@@ -20,11 +16,13 @@ public class Practical_3_4 {
 
             char ch = password.charAt(i);
 
-            if (Character.isDigit(ch))
-                digitCount++;
-
-            else if (!Character.isLetter(ch))
+            if (!Character.isLetterOrDigit(ch)) {
                 return false;
+            }
+
+            if (Character.isDigit(ch)) {
+                digitCount++;
+            }
         }
 
         return digitCount >= 2;
@@ -34,13 +32,14 @@ public class Practical_3_4 {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter Password: ");
+        System.out.print("Enter password: ");
         String password = sc.nextLine();
 
-        if (isValidPassword(password))
+        if (isValidPassword(password)) {
             System.out.println("Valid Password");
-        else
+        } else {
             System.out.println("Invalid Password");
+        }
 
         sc.close();
     }

@@ -37,6 +37,7 @@ public class Practical_2_6 {
 
         Scanner sc = new Scanner(System.in);
 
+        // array of objects
         BankAccount[] accounts = new BankAccount[5];
 
         // Create objects
@@ -57,6 +58,7 @@ public class Practical_2_6 {
         }
 
         System.out.println("\nAll Accounts:");
+        
         for (BankAccount acc : accounts) {
             acc.displayValues();
         }

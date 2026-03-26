@@ -21,7 +21,7 @@ public class Practical_1_3 {
         System.out.print("Enter a single character: ");
         char ch = sc.next().charAt(0);
 
-        // Convert to lowercase for case-insensitive comparison
+        // Convert to lowercase for case-insensitive comparison using wrapper class
         ch = Character.toLowerCase(ch);
 
         if (ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u') {
