@@ -46,5 +46,6 @@ public class Practical_3_1 {
         University s3 = new University();
 
         System.out.println("Total Students: " + University.getTotalStudents());
+        
     }
 }
