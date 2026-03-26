@@ -1,5 +1,7 @@
 # 🐧 Operating Systems (OS) - Semester 4
 
+[⬅ Back to Home](../README.md)
+
 > Official GTU Syllabus, Study Material, and Exam Papers for Operating Systems.Comprehensive study guide for GTU Operating Systems covering core concepts, scheduling algorithms, processes, memory management, and exam papers.
 
 ## 📌 Course Information
@@ -22,8 +24,8 @@ This folder contains the ultimate study material for **Operating Systems** in Se
 
 ## 📂 Folder Structure
 
-| Folder                             | Description                              | Contains               |
-| ---------------------------------- | ---------------------------------------- | ---------------------- |
+| Folder                          | Description                              | Contains               |
+| ------------------------------- | ---------------------------------------- | ---------------------- |
 | **[GTU paper](./GTU%20paper/)** | Previous years' official GTU exam papers | 12+ Papers (2020-2025) |
 | **[mid](./mid/)**               | Mid-semester examination papers          | 1 Mid Paper            |
 | **[Notes](./Notes/)**           | Unit-wise comprehensive study notes      | 10 Units + Roadmap     |
@@ -35,17 +37,17 @@ This folder contains the ultimate study material for **Operating Systems** in Se
 > **TIP**
 > **Units 2, 4, and 6** carry the highest marks and calculation-based problems!
 
-| Unit             | Title & Major Topics                                                                                            | Weightage |
-| ---------------- | --------------------------------------------------------------------------------------------------------------- | --------- |
-| **Unit 1** | **Introduction:** OS Goals, Architecture, System calls, Batch/Multi-programming modes.                    | 15%       |
-| **Unit 2** | **Proc. & Thread Management:** Scheduling algorithms (FCFS, SJF, RR), `fork()`, `exec()`, `join()`. | 12%       |
-| **Unit 3** | **Concurrency & Sync:** Mutual Exclusion, Semaphores, Pipes, Signals, Monitors.                           | 12%       |
-| **Unit 4** | **Inter Process Comm (IPC):** Peterson’s Solution, Producer-Consumer, Reader’s-Writer Problem.          | 14%       |
-| **Unit 5** | **Deadlock:** Prevention, Avoidance (Banker's Algorithm), Detection, Starvation.                          | 7%        |
-| **Unit 6** | **Memory Management:** Paging, Allocation (Best/First/Worst Fit), VM replacement (LRU, FIFO, Optimal).    | 16%       |
-| **Unit 7** | **I/O & Disk Scheduling:** FCFS, SCAN, SSTF, RAID, Disk Cache management.                                 | 11%       |
-| **Unit 8** | **Unix/Linux OS:** Shell Scripting, Shell Filters, System Administration.                                 | 11%       |
-| **Unit 9** | **Virtualization:** VMware ESXi, Hyper-V, Xen Variants, Android VM Architecture.                          | 12%       |
+| Unit       | Title & Major Topics                                                                                   | Weightage |
+| ---------- | ------------------------------------------------------------------------------------------------------ | --------- |
+| **Unit 1** | **Introduction:** OS Goals, Architecture, System calls, Batch/Multi-programming modes.                 | 15%       |
+| **Unit 2** | **Proc. & Thread Management:** Scheduling algorithms (FCFS, SJF, RR), `fork()`, `exec()`, `join()`.    | 12%       |
+| **Unit 3** | **Concurrency & Sync:** Mutual Exclusion, Semaphores, Pipes, Signals, Monitors.                        | 12%       |
+| **Unit 4** | **Inter Process Comm (IPC):** Peterson’s Solution, Producer-Consumer, Reader’s-Writer Problem.         | 14%       |
+| **Unit 5** | **Deadlock:** Prevention, Avoidance (Banker's Algorithm), Detection, Starvation.                       | 7%        |
+| **Unit 6** | **Memory Management:** Paging, Allocation (Best/First/Worst Fit), VM replacement (LRU, FIFO, Optimal). | 16%       |
+| **Unit 7** | **I/O & Disk Scheduling:** FCFS, SCAN, SSTF, RAID, Disk Cache management.                              | 11%       |
+| **Unit 8** | **Unix/Linux OS:** Shell Scripting, Shell Filters, System Administration.                              | 11%       |
+| **Unit 9** | **Virtualization:** VMware ESXi, Hyper-V, Xen Variants, Android VM Architecture.                       | 12%       |
 
 ---
 

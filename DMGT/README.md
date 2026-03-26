@@ -1,5 +1,7 @@
 # 🧠 Discrete Mathematics and Graph Theory (DMGT) - Semester 4
 
+[⬅ Back to Home](../README.md)
+
 > Comprehensive GTU Study Guide and exam papers for Discrete Mathematics and Graph Theory.
 
 ## 📌 Course Information

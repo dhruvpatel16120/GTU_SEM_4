@@ -1,5 +1,7 @@
 # 📊 Data Science for Humanity (DSH) - Semester 4
 
+[⬅ Back to Home](../README.md)
+
 > Official GTU Syllabus, Study Material, and Exam Papers for Data Science for Humanity.
 
 ## 📌 Course Information

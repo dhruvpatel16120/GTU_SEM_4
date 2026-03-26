@@ -1,5 +1,7 @@
 # 🌍 Environmental Science (ES) - Semester 4
 
+[⬅ Back to Home](../README.md)
+
 > Official GTU Syllabus, Study Material, and Exam Papers for Environmental Science, Sustainability and Renewable Energy.
 
 ## 📌 Course Information

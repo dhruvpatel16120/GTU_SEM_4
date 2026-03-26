@@ -1,5 +1,7 @@
 # 🤖 Artificial Intelligence (AI) - Semester 4
 
+[⬅ Back to Home](../README.md)
+
 > Official GTU Syllabus, Study Material, and Exam Papers for Artificial Intelligence.
 
 ## 📌 Course Information
