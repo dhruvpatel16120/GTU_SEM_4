@@ -13,6 +13,7 @@ public class Practical_5_5 {
     public static void main(String[] args) {
 
         // Write your code here
+        System.err.println("Check OOPs/codes/exam/Practical_5_5.java for the solution of this practical.");
 
     }
 

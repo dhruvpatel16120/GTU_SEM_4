@@ -1,0 +1,165 @@
+
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  .wrap { padding: 16px 0; font-family: var(--font-sans); color: var(--color-text-primary); }
+  h2 { font-size: 16px; font-weight: 500; margin: 0 0 12px; }
+  .grid-area { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 20px; }
+  .panel { flex: 1; min-width: 240px; background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: 12px; padding: 16px; }
+  .panel h3 { font-size: 14px; font-weight: 500; margin: 0 0 12px; }
+  table { border-collapse: collapse; width: 100%; }
+  td, th { width: 52px; height: 44px; text-align: center; font-size: 13px; border: 1px solid var(--color-border-secondary); border-radius: 4px; cursor: pointer; transition: background 0.15s; font-family: var(--font-mono); }
+  th { background: var(--color-background-tertiary); font-weight: 500; font-size: 12px; color: var(--color-text-secondary); border: none; }
+  td { background: var(--color-background-primary); color: var(--color-text-primary); }
+  td.highlight-cell { background: #FAEEDA; color: #633806; }
+  td.highlight-row { background: #E1F5EE; color: #085041; }
+  td.highlight-col { background: #E6F1FB; color: #042C53; }
+  td.highlight-all { background: #EEEDFE; color: #26215C; }
+  @media (prefers-color-scheme: dark) {
+    td.highlight-cell { background: #633806; color: #FAC775; }
+    td.highlight-row  { background: #085041; color: #9FE1CB; }
+    td.highlight-col  { background: #042C53; color: #B5D4F4; }
+    td.highlight-all  { background: #26215C; color: #CECBF6; }
+  }
+  .ops { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .op-btn { padding: 6px 12px; border-radius: 8px; border: 1px solid var(--color-border-secondary); background: var(--color-background-secondary); color: var(--color-text-secondary); font-size: 12px; cursor: pointer; transition: all 0.15s; }
+  .op-btn:hover { border-color: var(--color-border-primary); color: var(--color-text-primary); }
+  .op-btn.active { background: #EEEDFE; border-color: #534AB7; color: #26215C; }
+  @media (prefers-color-scheme: dark) { .op-btn.active { background: #26215C; border-color: #7F77DD; color: #CECBF6; } }
+  .code-block { background: var(--color-background-tertiary); border: 0.5px solid var(--color-border-tertiary); border-radius: 8px; padding: 12px 14px; font-family: var(--font-mono); font-size: 12px; line-height: 1.8; color: var(--color-text-primary); margin-top: 12px; white-space: pre; overflow-x: auto; }
+  .kw { color: #534AB7; }
+  @media (prefers-color-scheme: dark) { .kw { color: #AFA9EC; } }
+  .cm { color: var(--color-text-tertiary); }
+  .legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 11px; color: var(--color-text-secondary); margin-bottom: 12px; }
+  .leg { display: flex; align-items: center; gap: 5px; }
+  .dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+  .dot-cell { background: #EF9F27; }
+  .dot-row  { background: #1D9E75; }
+  .dot-col  { background: #378ADD; }
+  .dot-all  { background: #7F77DD; }
+  .info-box { background: var(--color-background-secondary); border-left: 3px solid #7F77DD; border-radius: 0 8px 8px 0; padding: 10px 14px; font-size: 12px; color: var(--color-text-secondary); line-height: 1.6; margin-top: 12px; }
+</style>
+<div class="wrap">
+  <div class="ops" id="ops">
+    <button class="op-btn active" data-op="single">Single cell</button>
+    <button class="op-btn" data-op="row">Entire row</button>
+    <button class="op-btn" data-op="col">Entire column</button>
+    <button class="op-btn" data-op="slice-row">Row slice</button>
+    <button class="op-btn" data-op="slice-col">Column slice</button>
+    <button class="op-btn" data-op="all">All values</button>
+  </div>
+
+  <div class="legend">
+    <div class="leg"><div class="dot dot-cell"></div>Single cell</div>
+    <div class="leg"><div class="dot dot-row"></div>Row</div>
+    <div class="leg"><div class="dot dot-col"></div>Column</div>
+    <div class="leg"><div class="dot dot-all"></div>All / Slice</div>
+  </div>
+
+  <div class="grid-area">
+    <div class="panel">
+      <h3>Array grid — click any cell</h3>
+      <table id="grid">
+        <tr>
+          <th></th><th>col 0</th><th>col 1</th><th>col 2</th><th>col 3</th>
+        </tr>
+      </table>
+      <div class="info-box" id="coord-label">Click a cell to see its index</div>
+    </div>
+    <div class="panel" style="flex:1.4">
+      <h3>Code — how to update this selection</h3>
+      <div class="code-block" id="code-out">Select an operation above</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const data = [
+  [10, 20, 30, 40],
+  [50, 60, 70, 80],
+  [90,100,110,120]
+];
+
+let currentOp = 'single';
+let clickedRow = 0, clickedCol = 0;
+
+const ops = {
+  single: (r,c) => ({
+    cells: [[r,c]],
+    code: `<span class="cm"># Update single cell at row ${r}, col ${c}</span>\narr[${r}, ${c}] = 999\n\n<span class="cm"># Or equivalently:</span>\narr[${r}][${c}] = 999`,
+    info: `Single cell → arr[row, col] → arr[${r}, ${c}]`
+  }),
+  row: (r,c) => ({
+    cells: [[0,0],[0,1],[0,2],[0,3],[1,0],[1,1],[1,2],[1,3],[2,0],[2,1],[2,2],[2,3]].filter(([rr])=>rr===r),
+    code: `<span class="cm"># Update entire row ${r} with one value</span>\narr[${r}, :] = 0\n\n<span class="cm"># Update row ${r} with specific values</span>\narr[${r}, :] = [11, 22, 33, 44]\n\n<span class="cm"># Add 10 to every element in row ${r}</span>\narr[${r}, :] += 10`,
+    info: `Entire row ${r} → arr[${r}, :] — the colon selects all columns`
+  }),
+  col: (r,c) => ({
+    cells: [[0,c],[1,c],[2,c]],
+    code: `<span class="cm"># Update entire column ${c} with one value</span>\narr[:, ${c}] = 0\n\n<span class="cm"># Update column ${c} with specific values</span>\narr[:, ${c}] = [11, 22, 33]\n\n<span class="cm"># Multiply every element in col ${c} by 2</span>\narr[:, ${c}] *= 2`,
+    info: `Entire column ${c} → arr[:, ${c}] — the colon selects all rows`
+  }),
+  'slice-row': (r,c) => ({
+    cells: [[r,1],[r,2],[r,3]],
+    code: `<span class="cm"># Update cols 1 to 3 in row ${r} (end index is exclusive)</span>\narr[${r}, 1:4] = [5, 6, 7]\n\n<span class="cm"># First 2 columns of row ${r}</span>\narr[${r}, :2] = [5, 6]\n\n<span class="cm"># Last 2 columns of row ${r}</span>\narr[${r}, -2:] = [5, 6]`,
+    info: `Row slice → arr[${r}, 1:4] — picks cols 1,2,3 (end is exclusive)`
+  }),
+  'slice-col': (r,c) => ({
+    cells: [[0,c],[1,c]],
+    code: `<span class="cm"># Update rows 0 to 1 in column ${c}</span>\narr[0:2, ${c}] = [5, 6]\n\n<span class="cm"># Every other row in column ${c}</span>\narr[::2, ${c}] = 99\n\n<span class="cm"># Last 2 rows in column ${c}</span>\narr[-2:, ${c}] = [5, 6]`,
+    info: `Column slice → arr[0:2, ${c}] — picks rows 0 and 1`
+  }),
+  all: (r,c) => ({
+    cells: [[0,0],[0,1],[0,2],[0,3],[1,0],[1,1],[1,2],[1,3],[2,0],[2,1],[2,2],[2,3]],
+    code: `<span class="cm"># Set all values to 0</span>\narr[:, :] = 0\n\n<span class="cm"># Or simply:</span>\narr[...] = 0\n\n<span class="cm"># Add 100 to every element</span>\narr += 100\n\n<span class="cm"># Boolean condition: set negatives to 0</span>\narr[arr < 0] = 0`,
+    info: `All elements → arr[:, :] or arr[...] — selects everything`
+  }),
+};
+
+function buildGrid() {
+  const tbl = document.getElementById('grid');
+  for (let r = 0; r < 3; r++) {
+    const tr = document.createElement('tr');
+    const th = document.createElement('th');
+    th.textContent = 'row ' + r;
+    tr.appendChild(th);
+    for (let c = 0; c < 4; c++) {
+      const td = document.createElement('td');
+      td.textContent = data[r][c];
+      td.dataset.r = r; td.dataset.c = c;
+      td.onclick = () => { clickedRow = r; clickedCol = c; render(); };
+      tr.appendChild(td);
+    }
+    tbl.appendChild(tr);
+  }
+}
+
+function render() {
+  const op = ops[currentOp](clickedRow, clickedCol);
+  const tds = document.querySelectorAll('#grid td');
+  tds.forEach(td => {
+    const r = +td.dataset.r, c = +td.dataset.c;
+    td.className = '';
+    const hit = op.cells.some(([rr,cc]) => rr===r && cc===c);
+    if (hit) {
+      if (currentOp === 'single') td.className = 'highlight-cell';
+      else if (currentOp === 'row') td.className = 'highlight-row';
+      else if (currentOp === 'col') td.className = 'highlight-col';
+      else td.className = 'highlight-all';
+    }
+  });
+  document.getElementById('code-out').innerHTML = op.code;
+  document.getElementById('coord-label').textContent = op.info;
+}
+
+document.getElementById('ops').addEventListener('click', e => {
+  if (!e.target.dataset.op) return;
+  document.querySelectorAll('.op-btn').forEach(b => b.classList.remove('active'));
+  e.target.classList.add('active');
+  currentOp = e.target.dataset.op;
+  render();
+});
+
+buildGrid();
+render();
+</script>
