@@ -4,6 +4,7 @@
 
 ![GTU](https://img.shields.io/badge/GTU-Semester_4-blue) ![Last Updated](https://img.shields.io/badge/Last%20Updated-March%202026-green) ![License](https://img.shields.io/badge/License-Educational-orange)
 
+> 📌 Note: This repository is intended solely for educational and non-commercial purposes. The project is currently under active development and is regularly updated. Users, especially students, are encouraged to revisit the repository periodically to stay informed about the latest changes and improvements.
 ---
 
 ## 📋 About This Repository
