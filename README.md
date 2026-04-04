@@ -1,6 +1,6 @@
 # GTU Semester 4 - Complete Study Material Repository
 
-> A comprehensive study resource created by Dhruv Patel, designed to help GTU students in AI, Computer Science, and related branches excel in academics and score better CGPA for placements.
+> A comprehensive study resource created by **[Dhruv Patel](https://dhruvpatelofficial.vercel.app/)**, designed to help GTU students in AI, Computer Science, and related branches excel in academics and score better CGPA for placements.
 
 ![GTU](https://img.shields.io/badge/GTU-Semester_4-blue) ![Last Updated](https://img.shields.io/badge/Last%20Updated-March%202026-green) ![License](https://img.shields.io/badge/License-Educational-orange)
 
