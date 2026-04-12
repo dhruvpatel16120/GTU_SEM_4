@@ -16,7 +16,7 @@ class BankAccount {
     String accountId;
     String accountHolderName;
     double balance;
-
+ 
     void assignValues(String id, String name, double bal) {
         accountId = id;
         accountHolderName = name;
@@ -32,7 +32,6 @@ class BankAccount {
 }
 
 public class Practical_2_6 {
-
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);

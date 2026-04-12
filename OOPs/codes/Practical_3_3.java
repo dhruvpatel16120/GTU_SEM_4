@@ -22,7 +22,7 @@ class College {
         String course;
 
         void acceptDetails() {
-            @SuppressWarnings("resource")
+            // @SuppressWarnings("resource")
             Scanner sc = new Scanner(System.in);
 
             System.out.print("Enter Student Name: ");

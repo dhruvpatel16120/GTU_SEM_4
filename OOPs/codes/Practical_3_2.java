@@ -38,8 +38,8 @@ public class Practical_3_2 {
 
     public static void main(String[] args) {
 
-        BankAccount acc1 = new BankAccount("Dhruv", 50000);
-        BankAccount acc2 = new BankAccount("Rahul", 80000);
+        BankAccount acc1 = new BankAccount("Dhruv", 50000.0);
+        BankAccount acc2 = new BankAccount("Rahul", 80000.0);
 
         System.out.println("Interest with current rate:");
         acc1.calculateInterest();
