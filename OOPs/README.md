@@ -24,12 +24,12 @@ This folder contains the ultimate study material for **Object Oriented Programmi
 
 ## 📂 Folder Structure
 
-| Folder                          | Description                              | Contains                |
-| ------------------------------- | ---------------------------------------- | ----------------------- |
+| Folder                             | Description                              | Contains                |
+| ---------------------------------- | ---------------------------------------- | ----------------------- |
 | **[GTU Paper](./GTU%20Paper/)** | Previous years' official GTU exam papers | 13+ Papers (2020-2025)  |
 | **[mid](./mid/)**               | Mid-semester examination papers          | 4 Mid Papers            |
 | **[notes](./notes/)**           | Unit-wise comprehensive study notes      | 8 Comprehensive Units   |
-| **[codes](./codes/)**           | **60+ Practical Java Programs**          | Full Practical Solution |
+| **[codes](./codes/)**           | **60+ Practical Java Programs**    | Full Practical Solution |
 
 ---
 
@@ -38,8 +38,8 @@ This folder contains the ultimate study material for **Object Oriented Programmi
 > **TIP**
 > Focus on **Units 3, 4, and 5** as they form the core of Object Oriented principles and carry **60%** weightage!
 
-| Unit       | Title & Major Topics                                                                                  | Weightage |
-| ---------- | ----------------------------------------------------------------------------------------------------- | --------- |
+| Unit             | Title & Major Topics                                                                                        | Weightage |
+| ---------------- | ----------------------------------------------------------------------------------------------------------- | --------- |
 | **Unit 1** | **Basics of Java:** JVM Architecture, JDK/JRE, Data types, type conversion.                           | 5%        |
 | **Unit 2** | **Loops & Conditionals:** If-else ladder, switch-case, enhanced for-loop, break/continue.             | 5%        |
 | **Unit 3** | **Basics of OOP:** Encapsulation, Abstraction, access specifiers, Static members, Inner classes.      | 20%       |
